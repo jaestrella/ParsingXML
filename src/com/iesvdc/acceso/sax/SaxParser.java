@@ -14,7 +14,7 @@ import java.io.*;
  *
  * @author matinal
  */
-public class SaxParser {
+public class SaxParser extends DefaultHandler {
 
    
     public void startDocument() throws SAXException {
@@ -74,7 +74,7 @@ public class SaxParser {
             System.out.println("SAX Events:");
             try {
                 XMLReader reader = XMLReaderFactory.createXMLReader();
-                reader.setContentHandler((ContentHandler) new SaxParser());
+                reader.setContentHandler(new SaxParser());
                 reader.parse(new InputSource(
                         new FileReader(inputFile)));
             } catch (SAXException | IOException e) {
