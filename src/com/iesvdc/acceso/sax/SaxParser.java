@@ -17,16 +17,19 @@ import java.io.*;
 public class SaxParser extends DefaultHandler {
 
    
+    @Override
     public void startDocument() throws SAXException {
         System.out.println("SAX Event: START DOCUMENT");
     }
 
     
+    @Override
     public void endDocument() throws SAXException {
         System.out.println("SAX Event: END DOCUMENT");
     }
 
     
+    @Override
     public void startElement(String namespaceURI,
             String localName,
             String qName,
@@ -41,6 +44,7 @@ public class SaxParser extends DefaultHandler {
     }
 
     
+    @Override
     public void endElement(String namespaceURI,
             String localName,
             String qName) throws SAXException {
@@ -48,6 +52,7 @@ public class SaxParser extends DefaultHandler {
     }
 
     
+    @Override
     public void characters(char[] ch,
             int start,
             int length) throws SAXException {
